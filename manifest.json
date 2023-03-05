@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "author": "Hafiz Zeeshan",
+  "name": "CopyChatGPT - Sidebar Hider",
+  "description": "Hide sidebar & copy ChatGPT answers. Clean, fast browsing.",
+  "version": "1.0",
+  "permissions": ["activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "default_locale": "en",
+  "host_permissions": ["https://chat.openai.com/chat/*"],
+  "action": {
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "24": "assets/icon24.png",
+      "32": "assets/icon32.png",
+      "48": "assets/icon48.png",
+      "64": "assets/icon64.png",
+      "128": "assets/icon128.png"
+    },
+    "default_title": "CopyChatGPT - Sidebar Hider"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://chat.openai.com/chat/*"],
+      "js": ["contentScript.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}

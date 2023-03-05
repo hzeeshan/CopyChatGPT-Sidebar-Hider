@@ -1,0 +1,60 @@
+.clipboard-btn {
+  inline-size: auto;
+  overflow-wrap: break-word;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.clipboard-btn-question {
+  background-color: #444554;
+}
+
+.clipboard-btn-answer {
+  background-color: #343541;
+}
+.bottom {
+  bottom: 30px;
+}
+.notification {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 200px;
+  max-width: 400px;
+  padding: 16px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.notification.show {
+  opacity: 1;
+  animation: slide-up 0.3s ease-in-out;
+}
+.notification.hide {
+  opacity: 0;
+  animation: slide-down 0.3s ease-in-out;
+}
+@keyframes slide-up {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, 0%);
+  }
+}
+@keyframes slide-down {
+  from {
+    transform: translate(-50%, 0%);
+  }
+  to {
+    transform: translate(-50%, 100%);
+  }
+}
